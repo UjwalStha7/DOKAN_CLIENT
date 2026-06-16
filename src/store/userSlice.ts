@@ -11,11 +11,11 @@ const userSlice = createSlice({
     name : "user",     //room name
     initialState : userInfo,       //can be accessed anywhere
     reducers : {        //helps to manipulate initial state data.
-        setName(state:User, action:PayloadAction<User>){ //by default state and action
-            state.name = "Lol test"
+        setName(state:User, action:PayloadAction<string>){ //by default state and action
+            state.name = action.payload
         },
-        setAge(state:User,action:PayloadAction<User>){
-            state.age = 12
+        setAge(state:User, action:PayloadAction<number>){         
+            state.age = action.payload
         }
 
     }
