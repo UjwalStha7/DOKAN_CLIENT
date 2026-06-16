@@ -1,10 +1,13 @@
-import { useState, type ChangeEvent, type SubmitEvent } from "react"
-import { useAppDispatch } from "../../store/hooks"
+import { useState, useEffect, type ChangeEvent, type SubmitEvent } from "react"
+import { useAppDispatch, useAppSelector } from "../../store/hooks"
 import { registerUser } from "../../store/authSlice"
-
+import { Status} from "../../globals/types/type"
+import { useNavigate } from "react-router-dom"
 
  
 function Register(){
+    const {status} = useAppSelector((store)=>store.auth)
+    const navigate = useNavigate()
     const dispatch = useAppDispatch()
     const [data, setData] = useState({
         username : "",
@@ -22,6 +25,14 @@ function Register(){
         e.preventDefault()
         dispatch(registerUser(data))
     }
+    useEffect(()=>{
+        if(status === Status.SUCCESS){
+            navigate("/login")
+        }else if (status === Status.ERROR){
+            alert("Something went wrong")
+        }
+    },[status])
+
     return (
         <div className="bg-gray-100 flex h-screen items-center justify-center px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-md space-y-8">

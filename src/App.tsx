@@ -4,6 +4,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Register from './pages/user/Register'
 import store from './store/store'
 import { Provider } from 'react-redux'
+import Home from './pages/home/Home'
+import Login from './pages/user/Login'
 
 function App() {
 
@@ -12,7 +14,9 @@ function App() {
    <Provider store = {store}>
      <BrowserRouter>
       <Routes>
+        <Route path='/' element={<Home />} />
         <Route path='/register' element={<Register />}/>
+        <Route path='/login' element={<Login />}/>
       </Routes>
     </BrowserRouter>
    </Provider>
