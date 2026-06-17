@@ -93,7 +93,7 @@ export function loginUser(data:ILoginUser){
     }
 }
 
-function forgotPassword(data:{email : string}){
+export function forgotPassword(data:{email : string}){
     return async function forgotPasswordThunk(dispatch:AppDispatch){
         try{
              const response = await API.post("/auth/forgot-password",data)
