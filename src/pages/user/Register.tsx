@@ -2,7 +2,7 @@ import { useState, useEffect, type ChangeEvent, type SubmitEvent } from "react"
 import { useAppDispatch, useAppSelector } from "../../store/hooks"
 import { registerUser } from "../../store/authSlice"
 import { Status} from "../../globals/types/type"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
  
 function Register(){
@@ -77,6 +77,7 @@ function Register(){
                                 Account
                                 </button>
                         </div>
+                        <p className="text-blue-500">Wanna login? <Link to='/login'> Go to Login</Link></p>
                     </form>
                 </div>
             </div>
