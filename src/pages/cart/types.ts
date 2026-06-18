@@ -1,13 +1,26 @@
 import type { StatusType } from "../../globals/types/type"
-import type { IProduct } from "../product/types"
 
+
+export interface ICartProduct{
+    id : string, 
+    productName : string, 
+    productImageUrl : string, 
+    productPrice : number
+}
 
 export interface ICartItem{
-    product : IProduct, 
-    quantity : number
+    id : string, 
+    quantity : number, 
+    productId : string, 
+    Product : ICartProduct
 }
 
 export interface ICartInitialState{
     items : ICartItem[], 
     status : StatusType
+}
+
+export interface ICartUpdateItem{
+    productId : string, 
+    quantity : number
 }
