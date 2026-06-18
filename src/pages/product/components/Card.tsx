@@ -12,7 +12,7 @@ const Card:React.FC<ICardProps> = ({product})=>{  //FC = Functional Component
                 <a href="#">
                     <img src={`http://localhost:3000/${product.productImageUrl}`} alt="Product" className="h-80 w-72 object-cover rounded-t-xl" />
                     <div className="px-4 py-3 w-72">
-                        <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
+                        <span className="text-gray-400 mr-3 uppercase text-xs">{product.Category.categoryName}</span>
                         <p className="text-lg font-bold text-black truncate block capitalize">{product.productName}</p>
                         <div className="flex items-center">
                             <p className="text-lg font-semibold text-black cursor-auto my-3">$ {product.productPrice}</p>
