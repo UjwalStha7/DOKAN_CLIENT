@@ -34,16 +34,54 @@ export function orderItem(data:IData){
         try {
            const response =  await APIWITHTOKEN.post("/order",data)
            if(response.status === 200){
-            dispatch(setStatus(Status.SUCCESS))
-            dispatch(setItems(response.data.data))
-            if(response.data.url){
-                setKhaltiUrl(response.data.url)
-            }
+                dispatch(setStatus(Status.SUCCESS))
+                dispatch(setItems(response.data.data))
+                console.log(response.data.url, "URL")
+                if(response.data.url){
+                    setKhaltiUrl(response.data.url)
+                    window.location.href = response.data.url
+                }
            }else{
             dispatch(setStatus(Status.ERROR))
            }
         } catch (error) {
             dispatch(setStatus(Status.ERROR))
+        }
+    }
+}
+
+export function fetchMyOrders(){
+    return async function fetchMyOrdersThunk(dispatch:AppDispatch){
+        try {
+            const response =  await APIWITHTOKEN.get("/order")
+            if(response.status === 200){
+                dispatch(setStatus(Status.SUCCESS))
+                dispatch(setItems(response.data.data))
+            }else{
+                dispatch(setStatus(Status.ERROR))
+            }
+        } catch (error) {
+            console.log(error)
+            dispatch(setStatus(Status.ERROR))
+            
+        }
+    }
+}
+
+export function fetchMyOrderDetails(id:string){
+    return async function fetchMyOrderDetailsThunk(dispatch:AppDispatch){
+        try {
+            const response =  await APIWITHTOKEN.get("/order/" + id)
+            if(response.status === 200){
+                dispatch(setStatus(Status.SUCCESS))
+                dispatch(setItems(response.data.data))
+            }else{
+                dispatch(setStatus(Status.ERROR))
+            }
+        } catch (error) {
+            console.log(error)
+            dispatch(setStatus(Status.ERROR))
+            
         }
     }
 }
