@@ -17,7 +17,7 @@ function Navbar(){
             // if(reduxToken && localStorageToken){
             //     setIsLoggedIn(true)
             // }
-        },[isLoggedIn])
+        },[isLoggedIn]) 
 
     return(
         <header className="sticky top-0 bg-white shadow">
@@ -35,7 +35,7 @@ function Navbar(){
             </div>
             <div className="flex mt-4 sm:mt-0">
                 <Link className="px-4" to="/products">Products</Link>
-
+                <Link className="px-4" to="/my-orders">My Orders</Link>
             </div>
             <div className="hidden md:block">
                 {
