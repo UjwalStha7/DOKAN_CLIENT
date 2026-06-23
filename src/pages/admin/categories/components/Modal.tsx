@@ -1,6 +1,7 @@
-import { type SubmitEvent, useState } from "react"
+import { type SubmitEvent, useEffect, useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../../../store/hooks"
-import { addCategory } from "../../../../store/adminCategorySlice"
+import { addCategory, resetStatus } from "../../../../store/adminCategorySlice"
+import { Status } from "../../../../globals/types/type"
 
 
 
@@ -18,19 +19,18 @@ const Modal:React.FC<ModalProps> = ({closeModal} : ModalProps)=>{
         try {
             
             dispatch(addCategory(categoryName))
-            setLoading(false)
         } catch (error) {
             console.log(error)
         }
 
     }
-    // useEffect(()=>{
-    //     if(status === Status.SUCCESS){
-    //         setLoading(false)
-    //         // closeModal()
-        
-    //     }
-    // },[status])
+    useEffect(()=>{
+        if(status === Status.SUCCESS){
+            setLoading(false)
+            closeModal()
+            dispatch(resetStatus())
+        }
+    },[status])
     return ( 
 <div id="modal" className="fixed inset-0 z-50 flex items-center justify-center">
   <div className="fixed inset-0 bg-black/50" />
@@ -53,7 +53,7 @@ const Modal:React.FC<ModalProps> = ({closeModal} : ModalProps)=>{
         <button onClick={closeModal} id="cancelButton" className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600">
           Cancel
         </button>
-        <button id="submitUrlButton" className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-md bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 dark:from-indigo-500 dark:to-violet-500 dark:hover:from-indigo-600 dark:hover:to-violet-600" disabled={loading}>
+        <button id="submitUrlButton" className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-md bg-linear-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 dark:from-indigo-500 dark:to-violet-500 dark:hover:from-indigo-600 dark:hover:to-violet-600" disabled={loading}>
           {loading ? "Adding.." : "Add"}
           <svg className="h-4 w-4 inline-block ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
