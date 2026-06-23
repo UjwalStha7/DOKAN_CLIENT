@@ -3,7 +3,7 @@ import type { IData, IOrder, IOrderItems } from "../pages/checkout/types";
 import { Status, type StatusType } from "../globals/types/type";
 import type { AppDispatch } from "./store";
 import { APIWITHTOKEN } from "../http";
-import { OrderStatus, type IOrderDetail } from "../pages/my-orders-details/types";
+import { OrderStatus, type IOrderDetail, type OrderStatusType } from "../pages/my-orders-details/types";
 
 const initialState:IOrder = {
     status : Status.LOADING, 
@@ -37,12 +37,18 @@ const orderSlice = createSlice({
             datas ? datas.Order.orderStatus = OrderStatus.Cancelled : ""
             // state.orderDetails = data
            
+        }, 
+        updateOrderStatusinSlice(state:IOrder,action:PayloadAction<{status:OrderStatusType,userId:string,orderId:string}>){
+            const {status,orderId} = action.payload 
+            const updateOrder = state.items.map((order)=>order.id == orderId  ? {...order,orderStatus : status} : order)
+            console.log(updateOrder,"UO")
+            state.items = updateOrder
         }
     }
 })
 
 export default orderSlice.reducer
-const {setItems,setStatus,setKhaltiUrl,setOrderDetails, updateOrderStatusToCancel} = orderSlice.actions
+export const {setItems,setStatus,setKhaltiUrl,setOrderDetails, updateOrderStatusToCancel,updateOrderStatusinSlice} = orderSlice.actions
 
 export function orderItem(data:IData){
     return async function orderItemThunk(dispatch:AppDispatch){
