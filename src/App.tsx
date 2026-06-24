@@ -20,7 +20,7 @@ import ProductDescription from './pages/admin/productDescription/ProductDescript
 import AdminOrderDetail from './pages/admin/order-details/AdminOrderDetails'
 import { io } from 'socket.io-client'
 import AdminOrder from './pages/admin/orders/AdminOrder'
-export const socket = io("http://localhost:3000",{
+export const socket = io("https://dokan-server-yeka.onrender.com/",{
   auth : {
     token  : localStorage.getItem("token")
   }

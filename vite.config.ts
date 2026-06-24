@@ -8,5 +8,13 @@ export default defineConfig({
     react(),
     tailwindcss()
   ], 
+  server: {
+    host: true, // This exposes the server to the local network
+    port: 5173, 
+    strictPort: true,
+    watch: {
+      usePolling: true, // 👈 This forces Vite to constantly check for changes
+    },
+  }
 })
 

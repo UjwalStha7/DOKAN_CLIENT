@@ -35,8 +35,8 @@ const handleOrderStatusChange = (e:ChangeEvent<HTMLSelectElement>)=>{
         <AdminLayout>
             <div className="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
   <div className="flex justify-start item-start space-y-2 flex-col">
-    <h1 className="text-3xl dark:text-white lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">Order #{orderDetails[0]?.orderId}</h1>
-    <p className="text-base dark:text-gray-300 font-medium leading-6 text-gray-600">{ new Date(orderDetails[0]?.createdAt).toLocaleDateString()}</p> 
+    <h1 className="text-3xl dark:text-blue-950 lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">Order #{orderDetails[0]?.orderId}</h1>
+    <p className="text-base dark:text-gray-700 font-medium leading-6 text-gray-600">{ new Date(orderDetails[0]?.createdAt).toLocaleDateString()}</p> 
     <p>Order Status : {orderDetails[0]?.Order?.orderStatus}</p>
   </div> 
   <div className="mt-10 flex flex-col xl:flex-row jusitfy-center items-stretch w-full xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0">
@@ -48,7 +48,7 @@ const handleOrderStatusChange = (e:ChangeEvent<HTMLSelectElement>)=>{
           return ( 
             <div key={od.id} className="mt-4 md:mt-6 flex flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full">
             <div className="pb-4 md:pb-8 w-full md:w-40">
-              <img className="w-full hidden md:block" src={`http://localhost:3000/${od?.Product?.productImageUrl}`} alt="dress" />
+              <img className="w-full hidden md:block" src={`https://dokan-server-yeka.onrender.com/${od?.Product?.productImageUrl}`} alt="dress" />
           
             </div>
             <div className="border-b border-gray-200 md:flex-row flex-col flex justify-between items-start w-full pb-8 space-y-4 md:space-y-0">
@@ -120,24 +120,25 @@ const handleOrderStatusChange = (e:ChangeEvent<HTMLSelectElement>)=>{
             </div>
       
           </div>
-          <label htmlFor="">Change Payment status</label>
-                <select name="" id="">
-                    <option value="paid">paid</option>
-                    <option value="unpaid">unpaid</option>
-
-                </select>
+          <div className="flex w-full justify-center items-center md:justify-start md:items-start">
+            <label className=" dark:text-white text-gray-600"  htmlFor="">Change Payment status</label>
+                    <select className=" dark:text-white text-gray-600" name="" id="">
+                        <option className=" dark:text-black text-white-600"  value="paid">paid</option>
+                        <option className=" dark:text-black text-white-600"  value="unpaid">unpaid</option>
+                    </select>
+          </div>
           <div className="flex w-full justify-center items-center md:justify-start md:items-start">
            {
             orderDetails[0]?.Order?.orderStatus !== OrderStatus?.Cancelled && (
 
                <>
-                <label htmlFor="">Change Order status</label>
-                <select onChange={handleOrderStatusChange}  name="" id="">
-                    <option value="pending">pending</option>
-                    <option value="delivered">delivered</option>
-                    <option value="ontheway">ontheway</option>
-                    <option value="preparation">preparation</option>
-                    <option value="cancelled">cancelled</option>
+                <label htmlFor="" className=" dark:text-white text-gray-600">Change Order status</label>
+                <select className=" dark:text-white text-gray-600" onChange={handleOrderStatusChange}  name="" id="">
+                    <option className=" dark:text-black text-white-600" value="pending">pending</option>
+                    <option className=" dark:text-black text-white-600"  value="delivered">delivered</option>
+                    <option className=" dark:text-black text-white-600"  value="ontheway">ontheway</option>
+                    <option className=" dark:text-black text-white-600"  value="preparation">preparation</option>
+                    <option className=" dark:text-black text-white-600"  value="cancelled">cancelled</option>
                 </select>
                </>
                 )

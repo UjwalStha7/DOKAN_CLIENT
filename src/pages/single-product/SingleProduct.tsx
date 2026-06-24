@@ -25,7 +25,7 @@ function SingleProduct(){
                 <div className="flex flex-col md:flex-row -mx-4">
                 <div className="md:flex-1 px-4">
                     <div className="h-115 rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
-                    <img className="w-full h-full object-cover" src={`http://localhost:3000/${product?.productImageUrl}`} alt="Product Image" />
+                    <img className="w-full h-full object-cover" src={`https://dokan-server-yeka.onrender.com/${product?.productImageUrl}`} alt="Product Image" />
                     </div>
                     <div className="flex -mx-2 mb-4">
                     <div className="w-1/2 px-2">

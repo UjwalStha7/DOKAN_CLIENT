@@ -44,7 +44,7 @@ function MyCart(){
                                     <tr>
                             <td className="py-4">
                             <div className="flex items-center">
-                                <img className="h-16 w-16 mr-4" src={`http://localhost:3000/${item.Product?.productImageUrl}`} alt="Product image" />
+                                <img className="h-16 w-16 mr-4" src={`https://dokan-server-yeka.onrender.com/${item.Product?.productImageUrl}`} alt="Product image" />
                                 <span className="font-semibold">{item.Product.productName}</span>
                             </div>
                             </td>

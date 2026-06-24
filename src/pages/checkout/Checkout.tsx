@@ -78,7 +78,7 @@ function Checkout(){
                 return ( 
                     <div className="flex items-start gap-4" key={item.id}>
                     <div className="w-32 h-28 max-lg:w-24 max-lg:h-24 flex p-3 shrink-0 bg-gray-200 rounded-md">
-                    <img src={`http://localhost:3000/${item.Product?.productImageUrl}`} className="w-full object-contain" />
+                    <img src={`https://dokan-server-yeka.onrender.com/${item.Product?.productImageUrl}`} className="w-full object-contain" />
                     </div>
                     <div className="w-full">
                     <h3 className="text-sm lg:text-base text-gray-800">{item.Product.productName}</h3>

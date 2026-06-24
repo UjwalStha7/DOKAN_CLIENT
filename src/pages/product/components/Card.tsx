@@ -10,7 +10,7 @@ const Card:React.FC<ICardProps> = ({product})=>{  //FC = Functional Component
         <Link to={`/products/${product.id}`}>
             <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                 <a href="#">
-                    <img src={`http://localhost:3000/${product.productImageUrl}`} alt="Product" className="h-80 w-72 object-cover rounded-t-xl" />
+                    <img src={`https://dokan-server-yeka.onrender.com/${product.productImageUrl}`} alt="Product" className="h-80 w-72 object-cover rounded-t-xl" />
                     <div className="px-4 py-3 w-72">
                         <span className="text-gray-400 mr-3 uppercase text-xs">{product.Category.categoryName}</span>
                         <p className="text-lg font-bold text-black truncate block capitalize">{product.productName}</p>
