@@ -29,7 +29,10 @@ function Navbar(){
         const handleLogout = () => {
             dispatch(logoutUser());
         };
-
+        useEffect(() => {
+            document.body.style.overflow = visible ? "hidden" : "";
+            return () => { document.body.style.overflow = ""; };
+        }, [visible]);
     return(
         <>
             <div className="flex items-center justify-between py-5 font-medium font-cooper px-12">
@@ -57,7 +60,7 @@ function Navbar(){
                                 <>
                                     <div className="relative z-50">
                                         <img className="h-5.5 w-5.5 cursor-pointer" src={user} alt="user profile" onClick={() => setIsDropdownOpen(!isDropdownOpen)} />
-                                            <div className={`absolute right-0 mt-3 z-50 transition-all duration-300 ease-out origin-top-right${
+                                            <div className={`absolute right-0 mt-3 z-50 transition-all duration-300 ease-out origin-top-right ${
                                                 isDropdownOpen
                                                     ? "opacity-100 visible scale-100"
                                                     : "opacity-0 invisible scale-95 pointer-events-none"
@@ -98,24 +101,21 @@ function Navbar(){
                     <img onClick={()=>setVisible(true)} src={menu} className="w-5 cursor-pointer sm:hidden" alt=""/>
                 </div>
                 {/* side bar menu for small screen*/}
-                <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? "w-full" : "w-0" }`}>
-                    <div className="flex flex-col text-gray-600 justify-center">
-                        <div onClick={()=>setVisible(false)} className="flex items-center gap-4 p-4 border-b border-gray-300 cursor-pointer text-gray-600">
+                <div className={`fixed inset-0 z-60 overflow-hidden bg-white transition-all duration-300 ${visible ? "w-full" : "w-0"}`}>
+                    <div className="flex flex-col text-gray-600 justify-center h-full">
+                        <div onClick={() => setVisible(false)} className="flex items-center gap-4 p-4 border-b border-gray-300 cursor-pointer text-gray-600">
                             <img className="h-4 rotate-180" src={back} alt="" />
                             <p>Back</p>
                         </div>
                         <div className="flex flex-col flex-1 items-center justify-center gap-6 text-gray-600 mt-10">
                             <NavLink onClick={() => setVisible(false)} className="py-2 text-lg" to="/">
                                 <p>HOME</p>
-                                <hr className="w-4/4 border-none h-[1.5px] bg-gray-500 hidden" />
                             </NavLink>
                             <NavLink onClick={() => setVisible(false)} className="py-2 text-lg" to="/products">
                                 <p>PRODUCT</p>
-                                <hr className="w-4/4 border-none h-[1.3px] bg-gray-500 hidden" />
                             </NavLink>
                             <NavLink onClick={() => setVisible(false)} className="py-2 text-lg" to="/about">
                                 <p>ABOUT</p>
-                                <hr className="w-4/4 border-none h-[1.5px] bg-gray-500 hidden" />
                             </NavLink>
                         </div>
                     </div>
