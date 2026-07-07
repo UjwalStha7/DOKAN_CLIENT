@@ -1,1 +1,66 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Cooper BT';
+  src: url('./font/cooper-bt-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Izmir';
+  src: url('./font/izmir-bold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tentaku';
+  src: url('./font/tentaku.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HeirloomArtcraft';
+  src: url('./font/HeirloomArtcraft-DemiBold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'VayuSans';
+  src: url('./font/VayuSans-Bold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BogartMedium';
+  src: url('./font/Bogart-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Andis';
+  src: url('./font/Andis.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+@theme {
+  /* This automatically creates the Tailwind utility class: font-cooper */
+  --font-cooper: "Cooper BT", serif;
+  --font-izmir: "Izmir", sans-serif;
+  --font-tentaku: "Tentaku", sans-serif;
+  --font-heirloomArtcraft : "HeirloomArtcraft", sans-serif;
+  --font-vayuSans : "VayuSans", sans-serif;
+  --font-bogartMedium : "BogartMedium", sans-serif;
+  --font-andis : "Andis", sans-serif;
+}
+
+a.active hr{
+  display: block;
+}

@@ -93,6 +93,22 @@ export function loginUser(data:ILoginUser){
     }
 }
 
+export function logoutUser() {
+    return function logoutUserThunk(dispatch: AppDispatch) {
+        try {
+            // 1. Remove the token from local storage
+            localStorage.removeItem("token");
+
+            // 2. Clear the token from your Redux state
+            // Note: Pass null or an empty string depending on your state's type definition
+            dispatch(setToken("")); 
+            dispatch(setStatus(Status.LOADING));
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
 export function forgotPassword(data:{email : string}){
     return async function forgotPasswordThunk(dispatch:AppDispatch){
         try{
