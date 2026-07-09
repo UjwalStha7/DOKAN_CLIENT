@@ -142,7 +142,7 @@ function Home() {
                 <section className="flex items-center justify-center w-full md:p-0">
                     <div className="bg-[#f9f5ec] flex flex-col md:flex-row items-center w-full mx-0 md:mx-10 rounded-none md:rounded-4xl min-h-123 pb-10 md:pb-0 max-w-297">
                         
-                        <div className="flex flex-col items-center justify-center font-cooper bg-[#f1fffa] w-full md:min-h-110 md:max-h-400 sm:max-h-100 md:ml-10 rounded-3xl overflow-hidden max-w-130 px-10 py-10 md:py-0">
+                        <div className="flex flex-col items-center justify-center font-cooper bg-[#f1fffa] w-full md:min-h-110 md:max-h-400 sm:max-h-100 md:ml-10 sm:rounded-3xl overflow-hidden max-w-130 px-10 py-10 md:py-0">
                             <h1 className="text-6xl text-center max-w-110 mb-5 md:mb-5">Bite Down Brush Up <span className="text-[#4fc09a]">Refill.</span></h1>
                             <p className="font-izmir text-[#575656] mb-5 md:mb-5 text-center">One billion plastic toothpaste tubes end up in landfills every year. We<span className="font-cooper">'</span>re here to change that. Just chew a bit, brush with a wet toothbrush, and watch it foam up like magic.</p>
                             <Link to='/products' className="bg-[#1b5a45] rounded-3xl w-full text-[#ffffff] font-izmir h-10 flex justify-center items-center">
@@ -224,7 +224,7 @@ function Home() {
                     {/* Scrollable Container */}
                     <div 
                         ref={scrollContainerRef}
-                        className="flex overflow-x-auto gap-6 px-10 py-10 w-full snap-x snap-mandatory scroll-smooth scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                        className="flex overflow-x-auto gap-6 px-12 py-10 w-full snap-x snap-mandatory scroll-smooth scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden "
                     >
                         {rateData.map((rate) => (
                             <div key={rate.id} className="snap-center">

@@ -6,6 +6,7 @@ interface ICategory{
 }
 
 export interface IProduct{
+    _id: string;
     id : string, 
     productName : string, 
     productDescription : string, 
@@ -16,7 +17,9 @@ export interface IProduct{
     createdAt : string, 
     updatedAt : string, 
     categoryId : string, 
-    Category : ICategory
+    Category : ICategory,
+    colors? : string[],
+    variantName? : string
 }
 
 export interface IProducts{

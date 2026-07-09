@@ -36,10 +36,10 @@ function Navbar(){
     return(
         <>
             <div className="flex items-center justify-between py-5 font-medium font-cooper px-12">
-                <div className="w-15 mr-3 flex items-center text-2xl">
+                <Link to="/" className="w-15 mr-3 flex items-center text-2xl">
                     <img src={logo} className="h-10 w-10 " />
                     <h1>Daily<span className="text-[#4fc09a]">Bite</span></h1>
-                </div>
+                </Link>
                 <ul className="hidden sm:flex gap-5 text-md text-gray-700 font-bogartMedium">
                   <NavLink to="/" className="flex flex-col items-center gap-1 px-4">
                         <p>HOME</p>
@@ -110,12 +110,15 @@ function Navbar(){
                         <div className="flex flex-col flex-1 items-center justify-center gap-6 text-gray-600 mt-10">
                             <NavLink onClick={() => setVisible(false)} className="py-2 text-lg" to="/">
                                 <p>HOME</p>
+                                <hr className="border-none h-[1.5px] bg-gray-700 hidden" />
                             </NavLink>
                             <NavLink onClick={() => setVisible(false)} className="py-2 text-lg" to="/products">
                                 <p>PRODUCT</p>
+                                <hr className="border-none h-[1.5px] bg-gray-700 hidden" />
                             </NavLink>
-                            <NavLink onClick={() => setVisible(false)} className="py-2 text-lg" to="/about">
+                            <NavLink onClick={() => setVisible(false)} className="py-2 text-lg" to="/under-construction">
                                 <p>ABOUT</p>
+                                <hr className="border-none h-[1.5px] bg-gray-700 hidden" />
                             </NavLink>
                         </div>
                     </div>

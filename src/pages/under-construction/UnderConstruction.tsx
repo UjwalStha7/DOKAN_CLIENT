@@ -3,7 +3,7 @@ import construction from '../../media/construction.png';
 
 const UnderConstruction = () => {
   return (
-    <div className="min-h-screen bg-[#a2ccfe] text-white flex flex-col items-center justify-start pt-2 text-center font-andis font-extrabold">
+    <div className="min-h-screen bg-[#a2ccfe] text-white flex flex-col items-center justify-center pt-2 text-center font-andis font-extrabold">
       <h1 className="text-5xl md:text-6xl mb-2">
         OOPS!
       </h1>
