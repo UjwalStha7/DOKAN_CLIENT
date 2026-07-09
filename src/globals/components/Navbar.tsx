@@ -49,7 +49,7 @@ function Navbar(){
                         <p>PRODUCT</p>
                         <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
                   </NavLink>
-                  <NavLink to="/under-construction" className="flex flex-col items-center gap-1 px-4">
+                  <NavLink to="/about" className="flex flex-col items-center gap-1 px-4">
                         <p>ABOUT</p>
                         <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
                   </NavLink>
@@ -116,7 +116,7 @@ function Navbar(){
                                 <p>PRODUCT</p>
                                 <hr className="border-none h-[1.5px] bg-gray-700 hidden" />
                             </NavLink>
-                            <NavLink onClick={() => setVisible(false)} className="py-2 text-lg" to="/under-construction">
+                            <NavLink onClick={() => setVisible(false)} className="py-2 text-lg" to="/about">
                                 <p>ABOUT</p>
                                 <hr className="border-none h-[1.5px] bg-gray-700 hidden" />
                             </NavLink>

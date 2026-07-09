@@ -19,7 +19,7 @@ const Card: React.FC<ICardProps> = ({ product }) => {
                 {/* Image: first on mobile/tablet, second on desktop */}
                 <div className="order-1 lg:order-2 grow w-full flex items-center justify-center aspect-square lg:aspect-auto mt-0 lg:-mt-2">
                     <img
-                        src={`https://dokan-server-yeka.onrender.com/${product.productImageUrl}`}
+                        src={`http://localhost:3000/${product.productImageUrl}`}
                         alt={product.productName}
                         className="w-full h-full object-cover"
                     />
@@ -70,7 +70,7 @@ const Card: React.FC<ICardProps> = ({ product }) => {
                 }}
             >
                 <span>ADD TO CART</span>
-                <span className="inline lg:hidden lg:group-hover:inline ml-2 transition-opacity duration-300">
+                <span className="hidden group-hover:inline ml-2 transition-opacity duration-300">
                     | ${product.productPrice}
                 </span>
             </button>

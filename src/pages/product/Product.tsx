@@ -55,7 +55,7 @@ function Product() {
             </div>
 
             {/* Sticky Category Navigation */}
-            <div className="sticky top-0 z-40 bg-white border-b border-gray-200 mx-12">
+            <div className="sticky top-0 z-40 bg-white border-b border-gray-200 mx-11">
                 <nav className="flex justify-start gap-8 py-4 overflow-x-auto">
                     {categories.map((category) => (
                         <button
@@ -94,7 +94,7 @@ function Product() {
                             </h2>
 
                             {/* Products Grid */}
-                            <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4 w-full mb-7 px-7">
+                            <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4 w-full mb-7 px-7 md:px-0">
                                 {categoryProducts.length > 0 ? (
                                     categoryProducts.map((product) => (
                                         <Card key={product.id || product._id} product={product} />  
@@ -108,7 +108,7 @@ function Product() {
 
                             {/* Divider — only between sections, aligned with product grid via mx-12 */}
                             {!isLastSection && (
-                                <div className="border-b border-black " />
+                                <div className="border-b border-black mx-7 md:mx-0" />
                             )}
 
                         </div>
