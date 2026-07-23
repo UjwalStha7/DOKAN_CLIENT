@@ -67,7 +67,8 @@ function Navbar(){
                                                     }`}>
                                                 <div className="flex flex-col w-40 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
                                                     <div className="px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors duration-150" onClick={() => setIsDropdownOpen(false)}>
-                                                        <p className="text-sm font-medium text-gray-700">My Profile</p>
+                                                        <Link to="/my-profiles">
+                                                        <p className="text-sm font-medium text-gray-700">My Profile</p></Link>
                                                     </div>
                                                     <Link to="/my-orders" className="px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors duration-150" onClick={() => setIsDropdownOpen(false)}>
                                                         <p className="text-sm font-medium text-gray-700">Orders</p>

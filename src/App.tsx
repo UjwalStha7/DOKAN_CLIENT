@@ -20,9 +20,11 @@ import ProductDescription from './pages/admin/productDescription/ProductDescript
 import AdminOrderDetail from './pages/admin/order-details/AdminOrderDetails'
 import { io } from 'socket.io-client'
 import AdminOrder from './pages/admin/orders/AdminOrder'
+import Test from './pages/home/Home'
 import UnderConstruction from './pages/under-construction/UnderConstruction'
 import About from './pages/about/About'
-export const socket = io("https://dokan-server-yeka.onrender.com/",{
+import MyProfile from './pages/my-profiles/MyProfile'
+export const socket = io("http://localhost:3000",{
   auth : {
     token  : localStorage.getItem("token")
   }
@@ -52,8 +54,10 @@ function App() {
         <Route path='/admin/orders' element={<AdminOrder />} />
         <Route path='/admin/products/:id' element={<ProductDescription/>} />
         <Route path='/admin/orders/:id' element={<AdminOrderDetail />} />
+        <Route path='/test' element={<Test />} />
         <Route path='/under-construction' element={<UnderConstruction />} />
         <Route path='/about' element={<About />} />
+        <Route path='/my-profiles' element={<MyProfile />} />
       </Routes>
     </BrowserRouter>
    </Provider>

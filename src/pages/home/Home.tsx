@@ -269,7 +269,7 @@ function Home() {
                                             {benefit.title}
                                         </h3>
                                         <p className="text-[9px] sm:text-[11px] md:text-sm lg:text-[15px] font-izmir text-[#8c8c8c] leading-tight sm:leading-snug md:leading-relaxed">
-                                            {benefit.description}
+                                            {benefit.d escription}
                                         </p>
                                     </div>
                                 </div>

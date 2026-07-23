@@ -56,6 +56,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'OddliniExtraBold';
+  src: url('./font/oddlini-extra-bold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
 @theme {
   /* This automatically creates the Tailwind utility class: font-cooper */
   --font-cooper: "Cooper BT", serif;
@@ -66,6 +74,7 @@
   --font-bogartMedium : "BogartMedium", sans-serif;
   --font-andis : "Andis", sans-serif;
   --font-joane : "JoaneRegular", sans-serif;
+  --font-oddlini : "OddliniExtraBold", sans-serif;
 }
 
 a.active hr{
